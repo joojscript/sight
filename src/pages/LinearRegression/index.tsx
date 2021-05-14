@@ -23,7 +23,6 @@ const LinearRegression: React.FC = () => {
   useEffect(() => {
     engine.computeResults(points);
     const sorted = points.map((p:Point) => p.x).sort((a, b) => a - b).filter((item, i, self) => self.lastIndexOf(item) === i);
-    console.log({ sorted, range: range(sorted[0] || 0, sorted[-1] || sorted[0] || 0) });
     engine.runBaseFunction(range(sorted[0] || 0, sorted[sorted.length - 1] || sorted[0] || 0));
   }, [points]);
 

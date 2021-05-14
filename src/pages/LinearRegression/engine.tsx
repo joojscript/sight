@@ -50,8 +50,6 @@ class LinearRegressionEngine {
       const linearDerivative = 2 * (point.y - y);
       this.angularCoeficient += (angularDerivative * this.learningRate);
       this.linearCoeficient += (linearDerivative * this.learningRate);
-
-      console.log(`ITERAÇÃO: ${this.angularCoeficient} - ${this.linearCoeficient}`);
     });
 
     points.forEach((point: Point) => this.baseFunction(point.x));
