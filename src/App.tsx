@@ -1,9 +1,14 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
+import Routes from 'routes';
 import './App.css';
-import LinearRegression from './pages/LinearRegression';
 
 function App() {
-  return <LinearRegression />;
+  return (
+    <ChakraProvider>
+      <Routes />
+    </ChakraProvider>
+  );
 }
 
 export default App;

@@ -74,7 +74,7 @@ const LinearRegression: React.FC = () => {
             <Line type="line" data={data} options={options} height={3} width={13} />
           </Row>
           <Row>
-            <Col>
+            <Col md={12} lg={6}>
               <Table variant="simple">
                 <TableCaption>Current Points</TableCaption>
                 <Thead>
@@ -97,43 +97,39 @@ const LinearRegression: React.FC = () => {
                 </Tbody>
               </Table>
             </Col>
-            <Col>
-              <Col>
-                <Button
-                  width="full"
-                  colorScheme={isOpen ? 'green' : 'twitter'}
-                  onClick={isOpen
-                    ? () => {
-                      setPoints([...points, { x: Number(xInputValue) || 0, y: Number(yInputValue) || 0 }]);
-                      onToggle();
-                    } : () => onToggle()}
-                >
-                  {isOpen ? 'Add Point' : 'Click here to add points'}
-                </Button>
+            <Col md={12} lg={6}>
+              <Button
+                width="full"
+                colorScheme={isOpen ? 'green' : 'twitter'}
+                onClick={isOpen
+                  ? () => {
+                    setPoints([...points, { x: Number(xInputValue) || 0, y: Number(yInputValue) || 0 }]);
+                    onToggle();
+                  } : () => onToggle()}
+              >
+                {isOpen ? 'Add Point' : 'Click here to add points'}
+              </Button>
 
-              </Col>
-              <Col>
-                <Fade in={isOpen}>
-                  <Input
-                    style={{ marginTop: 12 }}
-                    placeholder="X value"
-                    rounded="md"
-                    shadow="md"
-                    type="number"
-                    onChange={(e: any) => setXInputValue(e.target.value ? e.target.value : 0)}
-                  />
-                </Fade>
-                <Fade in={isOpen}>
-                  <Input
-                    style={{ marginTop: 12 }}
-                    placeholder="Y value"
-                    rounded="md"
-                    shadow="md"
-                    type="number"
-                    onChange={(e: any) => setYInputValue(e.target.value ? e.target.value : 0)}
-                  />
-                </Fade>
-              </Col>
+              <Fade in={isOpen}>
+                <Input
+                  style={{ marginTop: 12 }}
+                  placeholder="X value"
+                  rounded="md"
+                  shadow="md"
+                  type="number"
+                  onChange={(e: any) => setXInputValue(e.target.value ? e.target.value : 0)}
+                />
+              </Fade>
+              <Fade in={isOpen}>
+                <Input
+                  style={{ marginTop: 12 }}
+                  placeholder="Y value"
+                  rounded="md"
+                  shadow="md"
+                  type="number"
+                  onChange={(e: any) => setYInputValue(e.target.value ? e.target.value : 0)}
+                />
+              </Fade>
             </Col>
           </Row>
         </Col>
